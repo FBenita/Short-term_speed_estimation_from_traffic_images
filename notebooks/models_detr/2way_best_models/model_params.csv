@@ -1,0 +1,95 @@
+Model Name,Best Estimator,Best Params,Validation RMSE
+svr_m1,"SVR(C=1.5, gamma=0.0001, kernel='linear')","{'kernel': 'linear', 'gamma': 0.0001, 'epsilon': 0.1, 'C': 1.5}",7.405933256634792
+svr_m2,"SVR(C=1.5, gamma=0.001)","{'kernel': 'rbf', 'gamma': 0.001, 'epsilon': 0.1, 'C': 1.5}",7.4348284109528695
+svr_m3,"SVR(C=1.5, gamma=1e-05, kernel='linear')","{'kernel': 'linear', 'gamma': 1e-05, 'epsilon': 0.1, 'C': 1.5}",3.55619073690781
+svr_m4,"SVR(C=10, gamma=1e-05, kernel='linear')","{'kernel': 'linear', 'gamma': 1e-05, 'epsilon': 0.1, 'C': 10}",3.4873870245791663
+xgb_m1,"XGBRegressor(base_score=None, booster=None, callbacks=None,
+             colsample_bylevel=None, colsample_bynode=None,
+             colsample_bytree=None, early_stopping_rounds=None,
+             enable_categorical=False, eval_metric=None, feature_types=None,
+             gamma=None, gpu_id=None, grow_policy=None, importance_type=None,
+             interaction_constraints=None, learning_rate=0.1, max_bin=None,
+             max_cat_threshold=None, max_cat_to_onehot=None,
+             max_delta_step=None, max_depth=5, max_leaves=None,
+             min_child_weight=None, missing=nan, monotone_constraints=None,
+             n_estimators=100, n_jobs=None, num_parallel_tree=None,
+             predictor=None, random_state=None, ...)","{'objective': 'reg:squarederror', 'n_estimators': 100, 'max_depth': 5, 'learning_rate': 0.1}",5.71729003065172
+xgb_m2,"XGBRegressor(base_score=None, booster=None, callbacks=None,
+             colsample_bylevel=None, colsample_bynode=None,
+             colsample_bytree=None, early_stopping_rounds=None,
+             enable_categorical=False, eval_metric=None, feature_types=None,
+             gamma=None, gpu_id=None, grow_policy=None, importance_type=None,
+             interaction_constraints=None, learning_rate=0.1, max_bin=None,
+             max_cat_threshold=None, max_cat_to_onehot=None,
+             max_delta_step=None, max_depth=5, max_leaves=None,
+             min_child_weight=None, missing=nan, monotone_constraints=None,
+             n_estimators=200, n_jobs=None, num_parallel_tree=None,
+             predictor=None, random_state=None, ...)","{'objective': 'reg:squarederror', 'n_estimators': 200, 'max_depth': 5, 'learning_rate': 0.1}",5.328549493108614
+xgb_m3,"XGBRegressor(base_score=None, booster=None, callbacks=None,
+             colsample_bylevel=None, colsample_bynode=None,
+             colsample_bytree=None, early_stopping_rounds=None,
+             enable_categorical=False, eval_metric=None, feature_types=None,
+             gamma=None, gpu_id=None, grow_policy=None, importance_type=None,
+             interaction_constraints=None, learning_rate=0.01, max_bin=None,
+             max_cat_threshold=None, max_cat_to_onehot=None,
+             max_delta_step=None, max_depth=3, max_leaves=None,
+             min_child_weight=None, missing=nan, monotone_constraints=None,
+             n_estimators=1000, n_jobs=None, num_parallel_tree=None,
+             predictor=None, random_state=None, ...)","{'objective': 'reg:squarederror', 'n_estimators': 1000, 'max_depth': 3, 'learning_rate': 0.01}",3.0708425524012606
+xgb_m4,"XGBRegressor(base_score=None, booster=None, callbacks=None,
+             colsample_bylevel=None, colsample_bynode=None,
+             colsample_bytree=None, early_stopping_rounds=None,
+             enable_categorical=False, eval_metric=None, feature_types=None,
+             gamma=None, gpu_id=None, grow_policy=None, importance_type=None,
+             interaction_constraints=None, learning_rate=0.1, max_bin=None,
+             max_cat_threshold=None, max_cat_to_onehot=None,
+             max_delta_step=None, max_depth=5, max_leaves=None,
+             min_child_weight=None, missing=nan, monotone_constraints=None,
+             n_estimators=200, n_jobs=None, num_parallel_tree=None,
+             predictor=None, random_state=None, ...)","{'objective': 'reg:squarederror', 'n_estimators': 200, 'max_depth': 5, 'learning_rate': 0.1}",3.08072454356819
+lstm_m1,<keras.engine.sequential.Sequential object at 0x000001C7111EA290>,"{'input_unit': 64, 'n_layers': 3, 'lstm_0_units': 64, 'dropout': True, 'Dropout_rate': 0.0, 'learning_rate': 0.01, 'lstm_1_units': 64, 'lstm_2_units': 128, 'lstm_3_units': 128}",5.640846221220004
+lstm_m2,<keras.engine.sequential.Sequential object at 0x0000011BFF776290>,"{'input_unit': 128, 'n_layers': 3, 'lstm_0_units': 128, 'dropout': False, 'Dropout_rate': 0.1, 'learning_rate': 0.01, 'lstm_1_units': 128, 'lstm_2_units': 256, 'lstm_3_units': 256}",5.624356833024185
+lstm_m3,<keras.engine.sequential.Sequential object at 0x000001D2687FAA10>,"{'input_unit': 64, 'n_layers': 3, 'lstm_0_units': 64, 'dropout': True, 'Dropout_rate': 0.0, 'learning_rate': 0.01, 'lstm_1_units': 64, 'lstm_2_units': 128, 'lstm_3_units': 128}",3.480248727604082
+lstm_m4,<keras.engine.sequential.Sequential object at 0x000001D247693EB0>,"{'input_unit': 192, 'n_layers': 4, 'lstm_0_units': 192, 'dropout': True, 'Dropout_rate': 0.0, 'learning_rate': 0.01, 'lstm_1_units': 128, 'lstm_2_units': 128, 'lstm_3_units': 64}",3.323739052197424
+rf_m2,"RandomForestRegressor(max_depth=11, min_samples_split=5, n_estimators=200,
+                      random_state=42)","{'n_estimators': 200, 'min_samples_split': 5, 'min_samples_leaf': 1, 'max_depth': 11, 'bootstrap': True}",5.660492923839099
+rf_m1,"RandomForestRegressor(max_depth=9, min_samples_leaf=2, min_samples_split=5,
+                      n_estimators=200, random_state=42)","{'n_estimators': 200, 'min_samples_split': 5, 'min_samples_leaf': 2, 'max_depth': 9, 'bootstrap': True}",6.139776343810089
+rf_m3,"RandomForestRegressor(max_depth=7, min_samples_leaf=2, random_state=42)","{'n_estimators': 100, 'min_samples_split': 2, 'min_samples_leaf': 2, 'max_depth': 7, 'bootstrap': True}",3.1574116925310136
+rf_m4,"RandomForestRegressor(max_depth=7, min_samples_leaf=4, random_state=42)","{'n_estimators': 100, 'min_samples_split': 2, 'min_samples_leaf': 4, 'max_depth': 7, 'bootstrap': True}",3.1368779965724127
+xgb_m2_1,"XGBRegressor(base_score=None, booster=None, callbacks=None,
+             colsample_bylevel=None, colsample_bynode=None,
+             colsample_bytree=None, early_stopping_rounds=None,
+             enable_categorical=False, eval_metric=None, feature_types=None,
+             gamma=None, gpu_id=None, grow_policy=None, importance_type=None,
+             interaction_constraints=None, learning_rate=0.05, max_bin=None,
+             max_cat_threshold=None, max_cat_to_onehot=None,
+             max_delta_step=None, max_depth=3, max_leaves=None,
+             min_child_weight=None, missing=nan, monotone_constraints=None,
+             n_estimators=500, n_jobs=None, num_parallel_tree=None,
+             predictor=None, random_state=None, ...)","{'objective': 'reg:squarederror', 'n_estimators': 500, 'max_depth': 3, 'learning_rate': 0.05}",5.731162994923497
+lstm_m2_1,<keras.engine.sequential.Sequential object at 0x00000299844802B0>,"{'input_unit': 192, 'n_layers': 2, 'lstm_0_units': 64, 'dropout': False, 'Dropout_rate': 0.1, 'learning_rate': 0.01, 'lstm_1_units': 128, 'lstm_2_units': 64, 'lstm_3_units': 128}",5.749650202139278
+xgb_m2_3,"XGBRegressor(base_score=None, booster=None, callbacks=None,
+             colsample_bylevel=None, colsample_bynode=None,
+             colsample_bytree=None, early_stopping_rounds=None,
+             enable_categorical=False, eval_metric=None, feature_types=None,
+             gamma=None, gpu_id=None, grow_policy=None, importance_type=None,
+             interaction_constraints=None, learning_rate=0.05, max_bin=None,
+             max_cat_threshold=None, max_cat_to_onehot=None,
+             max_delta_step=None, max_depth=3, max_leaves=None,
+             min_child_weight=None, missing=nan, monotone_constraints=None,
+             n_estimators=1000, n_jobs=None, num_parallel_tree=None,
+             predictor=None, random_state=None, ...)","{'objective': 'reg:squarederror', 'n_estimators': 1000, 'max_depth': 3, 'learning_rate': 0.05}",5.992930035775048
+lstm_m2_3,<keras.engine.sequential.Sequential object at 0x00000299E82B99F0>,"{'input_unit': 64, 'n_layers': 2, 'lstm_0_units': 256, 'dropout': False, 'Dropout_rate': 0.2, 'learning_rate': 0.01, 'lstm_1_units': 192, 'lstm_2_units': 64, 'lstm_3_units': 64}",5.551358574770468
+xgb_m2_6,"XGBRegressor(base_score=None, booster=None, callbacks=None,
+             colsample_bylevel=None, colsample_bynode=None,
+             colsample_bytree=None, early_stopping_rounds=None,
+             enable_categorical=False, eval_metric=None, feature_types=None,
+             gamma=None, gpu_id=None, grow_policy=None, importance_type=None,
+             interaction_constraints=None, learning_rate=0.05, max_bin=None,
+             max_cat_threshold=None, max_cat_to_onehot=None,
+             max_delta_step=None, max_depth=7, max_leaves=None,
+             min_child_weight=None, missing=nan, monotone_constraints=None,
+             n_estimators=200, n_jobs=None, num_parallel_tree=None,
+             predictor=None, random_state=None, ...)","{'objective': 'reg:squarederror', 'n_estimators': 200, 'max_depth': 7, 'learning_rate': 0.05}",6.081376864193253
+lstm_m2_6,<keras.engine.sequential.Sequential object at 0x00000299EE7F4B20>,"{'input_unit': 64, 'n_layers': 2, 'lstm_0_units': 128, 'dropout': False, 'Dropout_rate': 0.2, 'learning_rate': 0.01, 'lstm_1_units': 256, 'lstm_2_units': 256, 'lstm_3_units': 256}",5.951856554937162
