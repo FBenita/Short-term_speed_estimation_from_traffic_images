@@ -4,7 +4,7 @@ Code and data for the manuscript
 
 > **Short-term speed estimation and forecasting from low-frequency traffic camera snapshots: Evidence from a Singapore expressway**
 
-Many cities publish still images from their traffic cameras every few minutes but no video. This study tests whether such snapshots can estimate and forecast expressway speeds. All data are real observations collected from public interfaces in 2022. None are simulated.
+Many cities publish still images from their traffic cameras every few minutes but no video. This study tests whether such snapshots can estimate and forecast expressway speeds. All data are real observations collected from public interfaces in 2022. 
 
 - **Images.** Five Land Transport Authority (LTA) cameras on the Bukit Timah Expressway (2703, 2705, 2706, 2707 and 2708) were queried every five minutes from 04:50 to 23:50 through the data.gov.sg Traffic Images API, during one week in each month from February to July 2022. In total there are 44,290 distinct images with at least one detected vehicle. Cameras 2706 and 2707 were used for both directions and the other three for one direction each, which gives seven camera-direction pairs.
 - **Reference speeds.** There are 44,884 travel speed records from the Google Maps Directions API for the same seven pairs, collected at the same time stamps from March to June 2022.
@@ -18,7 +18,6 @@ An earlier tutorial on the image pipeline is on the project website: [Image-base
 ```
 ├── README.md
 ├── LICENSE
-├── CITATION.cff
 ├── requirements.txt                  # scripts (collection, benchmarks, figures)
 ├── requirements-models.txt           # modelling notebooks (TensorFlow 2.10, XGBoost 1.7)
 ├── scripts/
@@ -54,20 +53,6 @@ An earlier tutorial on the image pipeline is on the project website: [Image-base
 └── results/                            # written by the scripts
 ```
 
-Large files are archived only on Zenodo (see Data).
-
-## Data
-
-| Data | Where | Content |
-|---|---|---|
-| Camera masks and Google origin-destination pairs | `data/cameras/` | 7 camera-direction pairs |
-| Google Maps travel times | `data/google_speeds/` | Route length (m) and travel time in traffic (s) every 5 minutes, March to June 2022 |
-| Image features | `data/features/`, `notebooks/models_*/` | Counts and image density per image and direction, with neighbouring-camera features and the reference speed |
-| Saved test predictions | `notebooks/models_*/*_best_models/` | June 2022 predictions of every model and specification |
-| Detections | Zenodo data record | Every Mask R-CNN and DETR detection for the five cameras: image URL, time stamp, class, score and bounding box (about 0.9 GB) |
-| Trained models | Zenodo data record | Selected RF, SVR, XGBoost (`.pkl`) and LSTM (`.h5`) models |
-
-The image URLs in the detection files still resolved in October 2026. The same links can be recovered with `scripts/01_collect_image_urls.py`, because the API answers historical queries. The images themselves are not redistributed.
 
 **Licences and terms.**
 - The camera images contain information from the Traffic Images dataset accessed from data.gov.sg, made available under the [Singapore Open Data Licence version 1.0](https://data.gov.sg/open-data-licence).
@@ -127,18 +112,6 @@ To run step 2 you need your own key, set as an environment variable and never wr
 ```bash
 export GOOGLE_MAPS_API_KEY="your-key"     # Windows: set GOOGLE_MAPS_API_KEY=your-key
 ```
-
-**Known gaps.**
-- The notebook used to run DETR was not preserved. Its outputs, every DETR detection, are in the Zenodo data record, so every later step can be reproduced.
-- The 2,000 images annotated to measure detection accuracy are not included.
-- Hyperparameter search and LSTM training on a GPU are not fully deterministic. Retraining can give slightly different numbers from the saved predictions, which are the ones reported in the paper.
-
-## Citation
-
-If you use this code or data, please cite the paper and the Zenodo archive (see `CITATION.cff`):
-
-- Paper: *to be added on acceptance*
-- Code and data: Zenodo, DOI *to be added on release*
 
 ## Contact
 
